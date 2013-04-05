@@ -1,0 +1,319 @@
+/* line 17, ../../../../../Downloads/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../Downloads/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../Downloads/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../Downloads/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../Downloads/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../Downloads/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../Downloads/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../Downloads/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../Downloads/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* -- VARIABLES & MIXINS --*/
+/* -- GENERAL STYLES -- */
+/* line 42, ../sass/styles.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+/* line 46, ../sass/styles.scss */
+body {
+  background: url("../img/subtle_dots.png") repeat;
+}
+
+/* line 49, ../sass/styles.scss */
+.pageWrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* line 53, ../sass/styles.scss */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* line 57, ../sass/styles.scss */
+header {
+  height: 4em;
+  background: #212121;
+  -webkit-box-shadow: 0px 2px 6px black;
+  -moz-box-shadow: 0px 2px 6px black;
+  box-shadow: 0px 2px 6px black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* line 67, ../sass/styles.scss */
+nav.main {
+  height: 4em;
+}
+/* line 70, ../sass/styles.scss */
+nav.main ul {
+  height: 4em;
+}
+/* line 73, ../sass/styles.scss */
+nav.main li {
+  display: inline-block;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  float: left;
+  font-family: "menschRegular", arial;
+  font-weight: 100;
+  color: #fff;
+  font-size: 1.5em;
+  -webkit-font-smoothing: antialiased;
+  font-smooth: never;
+  position: relative;
+  line-height: 2.75em;
+}
+
+/* line 90, ../sass/styles.scss */
+.navLineTop {
+  width: 1px;
+  height: 0em;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 15;
+}
+
+/* line 99, ../sass/styles.scss */
+.navLineBottom {
+  width: 1px;
+  height: 0em;
+  background: #fff;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  z-index: 15;
+}
+
+/* line 108, ../sass/styles.scss */
+section.banner {
+  margin-top: 4em;
+  height: 14em;
+  background: url("../img/mobile-banner.jpg") 50% 50% no-repeat;
+  position: relative;
+  z-index: 5;
+}
+/* line 115, ../sass/styles.scss */
+section.banner .bannerOverlay {
+  width: 13em;
+  height: 4em;
+  position: absolute;
+  padding: 0.75em;
+  bottom: 33%;
+  left: 0;
+  background: #000;
+  /* the fallback */
+  background: rgba(0, 0, 0, 0.65);
+  line-height: 1.5em;
+}
+/* line 125, ../sass/styles.scss */
+section.banner .bannerOverlay div:first-of-type {
+  color: #fff;
+  font-family: "nexaBoldRegular", arial;
+  font-weight: 100;
+  font-size: 1.5em;
+  -webkit-font-smoothing: antialiased;
+}
+/* line 129, ../sass/styles.scss */
+section.banner .bannerOverlay .bookingList {
+  display: none;
+  color: #fff;
+  list-style-type: bullet;
+  font-family: "menschRegular", arial;
+  font-weight: 100;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+}
+/* line 135, ../sass/styles.scss */
+section.banner .bannerOverlay .bookingList li {
+  -webkit-transition: text-indent 0.3s ease, color 0.3s ease;
+  -moz-transition: text-indent 0.3s ease, color 0.3s ease;
+  -o-transition: text-indent 0.3s ease, color 0.3s ease;
+  transition: text-indent 0.3s ease, color 0.3s ease;
+}
+/* line 138, ../sass/styles.scss */
+section.banner .bannerOverlay .bookingList li:hover {
+  text-indent: 0.25em;
+  color: #bbb;
+}
+/* line 142, ../sass/styles.scss */
+section.banner .bannerOverlay .bookingList li:before {
+  content: ' ';
+  height: 1em;
+  width: 2em;
+  background: url("../img/bullet-point.png") 1em 0 no-repeat;
+  position: relative;
+  margin-top: 0.4em;
+  float: left;
+}
+/* line 151, ../sass/styles.scss */
+section.banner .bannerOverlay div:nth-of-type(2) {
+  color: #fff;
+  font-family: "nexaLightRegular", arial;
+  font-weight: 100;
+  font-size: 1em;
+  position: absolute;
+  bottom: 5px;
+}
+
+/* line 160, ../sass/styles.scss */
+.socialIcons {
+  position: relative;
+  top: 75%;
+  left: 0.3em;
+}
+/* line 165, ../sass/styles.scss */
+.socialIcons .twitter {
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+}
+/* line 170, ../sass/styles.scss */
+.socialIcons .facebook {
+  position: absolute;
+  top: 0.5em;
+  left: 3.5em;
+}
+
+/* line 177, ../sass/styles.scss */
+div.textRotator {
+  height: 4em;
+  background: #212121;
+  -webkit-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.4);
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  line-height: 4em;
+}
+/* line 186, ../sass/styles.scss */
+div.textRotator p {
+  text-align: center;
+  color: #fff;
+  font-family: "nexaBoldRegular", arial;
+  font-weight: 100;
+  font-size: 2em;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 2px;
+  text-shadow: 1px 2px 0px #646464;
+  margin-left: -5em;
+  overflow: hidden;
+}
+/* line 195, ../sass/styles.scss */
+div.textRotator span {
+  position: absolute;
+}
+
+/* line 200, ../sass/styles.scss */
+section.mainContent {
+  width: 80%;
+  height: 20em;
+  background: url("../img/main-texture.jpg") repeat;
+  position: relative;
+  margin: 0 auto;
+  z-index: 5;
+  -webkit-box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* -- TEXT ROTATOR CSS -- */
+/* line 213, ../sass/styles.scss */
+.current {
+  opacity: 1.0;
+  z-index: 30;
+  background: #212121;
+  text-indent: 0.3em;
+  border-right: 50px #212121 solid;
+}
+
+/* line 220, ../sass/styles.scss */
+.next {
+  z-index: 25;
+  text-indent: 0.3em;
+}
+
+/* line 224, ../sass/styles.scss */
+.hidden {
+  opacity: 0.0;
+  z-index: 20;
+  text-indent: 0.3em;
+}
+
+/* -- HELPERS -- */
+/* line 232, ../sass/styles.scss */
+img.a {
+  z-index: 10;
+}
+
+/* line 235, ../sass/styles.scss */
+img.b {
+  z-index: 5;
+}

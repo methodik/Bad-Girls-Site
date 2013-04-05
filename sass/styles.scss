@@ -1,0 +1,238 @@
+@import 'compass/reset';
+@import 'compass/css3';
+
+/* -- VARIABLES & MIXINS --*/ 
+
+$black: #212121;
+
+@mixin mensch($size) {
+	font-family: 'menschRegular', arial;
+	font-weight: 100;
+	font-size: $size;
+	-webkit-font-smoothing: antialiased;
+}
+
+@mixin nexaBold($size) {
+	font-family: 'nexaBoldRegular', arial;
+	font-weight: 100;
+	font-size: $size;
+	-webkit-font-smoothing: antialiased;
+}
+
+@mixin nexaLight($size) {
+	font-family: 'nexaLightRegular', arial;
+	font-weight: 100;
+	font-size: $size;
+}
+
+@mixin plantinLight($size) {
+	font-family: 'plantinLight', arial;
+	font-weight: 100;
+	font-size: $size;
+}
+
+@mixin wisdomScript($size) {
+	font-family: 'wisdomScriptAiRegular', arial;
+	font-weight: 100;
+	font-size: $size;	
+}
+
+
+/* -- GENERAL STYLES -- */ 
+* {
+	@include box-sizing(border-box);
+	font-size: 62.5%;
+}
+body {
+	background: url('../img/subtle_dots.png') repeat;
+}
+.pageWrapper {
+	width: 100%;
+	overflow: hidden;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+header {
+	height: 4em;
+	background: $black;
+	@include box-shadow( 0px 2px 6px #000);
+	position:fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+}
+nav.main {
+	height: 4em;
+
+	ul {
+		height: 4em;
+	}
+	li {
+		display: inline-block;
+		width: 25%;
+		height: 100%;
+		text-align: center;
+		float: left;
+		font-family: 'menschRegular', arial;
+		font-weight: 100;
+		color: #fff;
+		font-size: 1.5em;
+		-webkit-font-smoothing: antialiased;
+		font-smooth: never;
+		position: relative;
+		line-height: 2.75em;
+	}
+}
+
+.navLineTop {
+	width: 1px;
+	height: 0em;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	z-index: 15;
+}
+.navLineBottom {
+	width: 1px;
+	height: 0em;
+	background: #fff;
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	z-index: 15;
+}
+section.banner {
+	margin-top: 4em;
+	height: 14em;
+	background: url('../img/mobile-banner.jpg') 50% 50% no-repeat;
+	position: relative;
+	z-index: 5;
+
+	.bannerOverlay {
+		width: 13em;
+		height: 4em;
+		position: absolute;
+		padding: 0.75em;
+		bottom: 33%;
+		left: 0;
+		background: #000; /* the fallback */
+		background: rgba(00, 00, 00, 0.65);
+		line-height: 1.5em;
+	div:first-of-type {
+		color: #fff;
+		@include nexaBold(1.5em);
+	}
+	.bookingList {
+		display: none;
+		color: #fff;
+		list-style-type: bullet;
+		@include mensch(1em);
+	}
+	.bookingList li {
+		@include transition(text-indent 0.3s ease, color 0.3s ease);
+	}
+	.bookingList li:hover {
+		text-indent: 0.25em;
+		color: #bbb;
+	}
+	.bookingList li:before{
+		content: ' ';
+		height: 1em;
+		width: 2em;
+		background: url('../img/bullet-point.png') 1em 0 no-repeat;
+		position: relative;
+		margin-top: 0.4em;
+		float: left;
+	}
+	div:nth-of-type(2) {
+		color: #fff;
+		@include nexaLight(1em);
+		position: absolute;
+		bottom: 5px;
+	}
+	}
+
+}
+.socialIcons {
+	position: relative;
+	top: 75%;
+	left: 0.3em;
+
+	.twitter {
+		position: absolute;
+		top: 0.5em;
+		left: 0.5em;	
+	}
+	.facebook {
+		position: absolute;
+		top: 0.5em;
+		left: 3.5em;
+	}
+}
+
+div.textRotator {
+	height: 4em;
+	background: $black;
+	@include box-shadow( 0px 0px 2px 2px rgba(00, 00, 00, 0.4));
+	position: relative;
+	width: 100%;
+	z-index: 10;
+	line-height: 4em;
+
+	p {
+		text-align: center;
+		color: #fff;
+		@include nexaBold(2em);
+		letter-spacing: 2px;
+		@include text-shadow(1px 2px 0px #646464);
+		margin-left: -5em;
+		overflow: hidden;
+	}
+	span {
+		position: absolute;
+	}
+}
+
+section.mainContent {
+	width: 80%;
+	height: 20em;
+	background: url('../img/main-texture.jpg') repeat;
+	position: relative;
+	margin: 0 auto;
+	z-index: 5;
+	@include box-shadow(0 2px 8px 4px rgba(00, 00, 00, 0.3));
+}
+
+
+/* -- TEXT ROTATOR CSS -- */
+
+.current {
+	opacity: 1.0;
+	z-index: 30;
+	background: $black;
+	text-indent: 0.3em;
+	border-right: 50px $black solid;
+}
+.next {
+	z-index: 25;
+	text-indent: 0.3em;
+}
+.hidden {
+	opacity: 0.0;
+	z-index: 20;
+	text-indent: 0.3em;
+}
+
+/* -- HELPERS -- */
+
+img.a {
+	z-index: 10;
+}
+img.b {
+	z-index: 5;
+}
+
