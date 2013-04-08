@@ -3,7 +3,7 @@ $(function() {
 
 	// FITVID.JS INIT
 
-	$('.showreel').fitVids();
+	$('.mainContent').fitVids();
 
 	// IMG ROLLOVERS
 

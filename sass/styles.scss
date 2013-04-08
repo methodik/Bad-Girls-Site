@@ -4,6 +4,7 @@
 /* -- VARIABLES & MIXINS --*/ 
 
 $black: #212121;
+$red: #c34f4f;
 
 @mixin mensch($size) {
 	font-family: 'menschRegular', arial;
@@ -26,15 +27,17 @@ $black: #212121;
 }
 
 @mixin plantinLight($size) {
-	font-family: 'plantinLight', arial;
+	font-family: 'plantinLight', times new roman;
 	font-weight: 100;
 	font-size: $size;
+	line-height: $size + 0.4em;
 }
 
 @mixin wisdomScript($size) {
 	font-family: 'wisdomScriptAiRegular', arial;
 	font-weight: 100;
-	font-size: $size;	
+	font-size: $size;
+	-webkit-font-smoothing: antialiased;
 }
 
 
@@ -192,6 +195,14 @@ div.textRotator {
 		margin-left: -5em;
 		overflow: hidden;
 	}
+	h2 {
+		text-align: center;
+		color: #fff;
+		@include nexaBold(2em);
+		letter-spacing: 2px;
+		@include text-shadow(1px 2px 0px #646464);
+		overflow: hidden;
+	}
 	span {
 		position: absolute;
 	}
@@ -199,12 +210,40 @@ div.textRotator {
 
 section.mainContent {
 	width: 80%;
-	height: 20em;
 	background: url('../img/main-texture.jpg') repeat;
 	position: relative;
 	margin: 0 auto;
 	z-index: 5;
 	@include box-shadow(0 2px 8px 4px rgba(00, 00, 00, 0.3));
+	padding-top: 2em;
+}
+.colRight {
+	@include plantinLight(0.9em);
+	padding: 1em;
+	display: block;
+}
+.colLeft {
+	@extend .colRight;
+}
+.liveDates {
+	height: 15em;
+}
+section.liveDates {
+	background: url('../img/live-dates-bg.jpg') 50% 0% no-repeat;
+}
+
+/* -- FOOTER -- */
+
+footer {
+	height: 10em;
+	background: url('../img/footer-bg.jpg') repeat;
+
+	h2 {
+		text-align: center;
+		color: #fff;
+		@include wisdomScript(1em);
+		line-height: 2em;
+	}
 }
 
 

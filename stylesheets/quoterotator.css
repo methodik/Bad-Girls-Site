@@ -1,0 +1,154 @@
+
+/* -- QUOTE ROTATOR -- */
+
+.quoteRotator-container {
+	width: 80%;
+	max-width: 35em;
+	margin: 2em auto 0em;
+	position: relative;
+	overflow: hidden;
+}
+.quoteRotator-theQuotesContainer {
+	height: 4em;
+}
+.quoteRotator-theQuotesContainer p:first-of-type {
+	text-align: center;
+}
+.quoteRotator-theQuotesContainer p:first-of-type {
+	font-family: 'menschRegular', arial;
+	font-weight: 100;
+	-webkit-font-smoothing: antialiased;
+	text-transform: uppercase;
+	font-size: 1.45em;
+	margin: 0 !important;
+}
+.quoteRotator-theQuotesContainer p:nth-of-type(2) {
+	font-family: 'wisdomScriptAiRegular', arial;
+	font-weight: 100;
+	color: #a6a6a6;
+	-webkit-font-smoothing: antialiased;
+	margin: 0.5em 1em 0.5em 1em;
+	text-align: center;
+}
+.quoteRotator-theQuotesContainer p span {
+	font-family: 'menschRegular', arial;
+	font-weight: 100;
+	-webkit-font-smoothing: antialiased;
+	font-size: 1.5em;
+	vertical-align: sub;
+}
+.quoteRotator-container img {
+	position: absolute;
+	left: 50%;
+	margin-left: -70px;
+}
+.quoteRotator-circles {
+	width: 50%;
+	margin: 0 auto;
+	height: 4em;
+	margin-top: 4em;
+	display: block;
+	clear: both;
+}
+.quoteRotator-circContainer {
+	width: 33.33%;
+	display: inline-block;
+	float: left;
+	height: 4em;
+	position: relative;
+}
+.quoteRotator-circles .circle {
+	height: 0.5em;
+	width: 0.5em;
+	border-radius: 50%;
+	background: #c34f4f;
+	position: absolute;
+	top: 50%;
+	margin-top: -5px;
+	left: 50%;
+	margin-left: -5px;
+	-webkit-transition: -webkit-box-shadow 0.2s ease; 
+	-moz-transition: -moz-box-shadow 0.2s ease;
+	-o-transition: -o-box-shadow 0.2s ease;
+	-ms-transition: -ms-box-shadow 0.2s ease;
+}
+.quoteRotator-circles .circle:hover {
+	box-shadow: 0px 0px 0px 0.125em #2b2b2b;
+	-webkit-box-shadow: 0px 0px 0px 0.125em #2b2b2b;
+	-moz-box-shadow: 0px 0px 0px 0.125em #2b2b2b;
+	-o-box-shadow: 0px 0px 0px 0.125em #2b2b2b;
+	-ms-box-shadow: 0px 0px 0px 0.125em #2b2b2b;
+}
+.qrNone {
+	display: none;
+	width: 100%;
+	height: 7em;
+}
+.qrNext {
+	margin-left: -200%;
+	width: 100%;
+	height: 7em;
+}
+.qrBeingUsed {
+	display:block;
+	width: 100%;
+	height: 7em;
+}
+.qrInUse {
+	box-shadow: 0px 0px 0px 0.3em #ccc;
+	-webkit-box-shadow: 0px 0px 0px 0.3em #ccc;
+	-moz-box-shadow: 0px 0px 0px 0.3em #ccc;
+	-o-box-shadow: 0px 0px 0px 0.3em #ccc;
+	-ms-box-shadow: 0px 0px 0px 0.3em #ccc;
+	transition: box-shadow 0.2s ease;
+	-webkit-transition: -webkit-box-shadow 0.2s ease;
+	-moz-transition: -moz-box-shadow 0.2s ease;
+	-o-transition: -o-box-shadow 0.2s ease;
+	-ms-transition: -ms-box-shadow 0.2s ease;
+}
+
+
+.qrInUse:hover {
+	box-shadow: 0px 0px 0px 3.2em #CCC;
+	-webkit-box-shadow: 0px 0px 0px 3.2em #CCC;
+	-moz-box-shadow: 0px 0px 0px 3.2em #CCC;
+	-o-box-shadow: 0px 0px 0px 3.2em #CCC;
+	-ms-box-shadow: 0px 0px 0px 3.2em #CCC;
+}
+
+.long {
+	margin-top: -7em;
+}
+
+@keyframes qrInUseAnimTwo {
+	0%   { box-shadow: 0px 0px 0px 0px #CCC; }
+	50%  { box-shadow: 0px 0px 0px 0.3em #CCC; }
+	100% { box-shadow: 0px 0px 0px 0.125em #CCC; }
+}
+@-webkit-keyframes qrInUseAnimTwo {
+	0%   { -webkit-box-shadow: 0px 0px 0px 0px #CCC; }
+	50%  { -webkit-box-shadow: 0px 0px 0px 0.3em #CCC; }
+	100% { -webkit-box-shadow: 0px 0px 0px 0.125em #CCC; }
+}
+@-moz-keyframes qrInUseAnimTwo {
+	0%   { -moz-box-shadow: 0px 0px 0px 0px #CCC; }
+	50%  { -moz-box-shadow: 0px 0px 0px 0.3em #CCC; }
+	100% { -moz-box-shadow: 0px 0px 0px 0.125em #CCC; }
+}
+@-o-keyframes qrInUseAnimTwo {
+	0%   { -o-box-shadow: 0px 0px 0px 0px #CCC; }
+	50%  { -o-box-shadow: 0px 0px 0px 0.3em #CCC; }
+	100% { -o-box-shadow: 0px 0px 0px 0.125em #CCC; }
+}
+@-ms-keyframes qrInUseAnimTwo {
+	0%   { -ms-box-shadow: 0px 0px 0px 0px #CCC; }
+	50%  { -ms-box-shadow: 0px 0px 0px 0.3em #CCC; }
+	100% { -ms-box-shadow: 0px 0px 0px 0.125em #CCC; }
+}
+.qrInUseAnimTwo {
+	-webkit-animation: qrInUseAnimTwo 0.3s;
+	-moz-animation: qrInUseAnimTwo 0.3s;
+	-o-animation: qrInUseAnimTwo 0.3s;
+	-ms-animation: qrInUseAnimTwo 0.3s;
+	animation: qrInUseAnimTwo 0.3s;
+}

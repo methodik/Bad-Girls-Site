@@ -65,7 +65,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* -- VARIABLES & MIXINS --*/
 /* -- GENERAL STYLES -- */
-/* line 42, ../sass/styles.scss */
+/* line 45, ../sass/styles.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -73,24 +73,24 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-size: 62.5%;
 }
 
-/* line 46, ../sass/styles.scss */
+/* line 49, ../sass/styles.scss */
 body {
   background: url("../img/subtle_dots.png") repeat;
 }
 
-/* line 49, ../sass/styles.scss */
+/* line 52, ../sass/styles.scss */
 .pageWrapper {
   width: 100%;
   overflow: hidden;
 }
 
-/* line 53, ../sass/styles.scss */
+/* line 56, ../sass/styles.scss */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* line 57, ../sass/styles.scss */
+/* line 60, ../sass/styles.scss */
 header {
   height: 4em;
   background: #212121;
@@ -104,15 +104,15 @@ header {
   z-index: 10;
 }
 
-/* line 67, ../sass/styles.scss */
+/* line 70, ../sass/styles.scss */
 nav.main {
   height: 4em;
 }
-/* line 70, ../sass/styles.scss */
+/* line 73, ../sass/styles.scss */
 nav.main ul {
   height: 4em;
 }
-/* line 73, ../sass/styles.scss */
+/* line 76, ../sass/styles.scss */
 nav.main li {
   display: inline-block;
   width: 25%;
@@ -129,7 +129,7 @@ nav.main li {
   line-height: 2.75em;
 }
 
-/* line 90, ../sass/styles.scss */
+/* line 93, ../sass/styles.scss */
 .navLineTop {
   width: 1px;
   height: 0em;
@@ -140,7 +140,7 @@ nav.main li {
   z-index: 15;
 }
 
-/* line 99, ../sass/styles.scss */
+/* line 102, ../sass/styles.scss */
 .navLineBottom {
   width: 1px;
   height: 0em;
@@ -151,7 +151,7 @@ nav.main li {
   z-index: 15;
 }
 
-/* line 108, ../sass/styles.scss */
+/* line 111, ../sass/styles.scss */
 section.banner {
   margin-top: 4em;
   height: 14em;
@@ -159,7 +159,7 @@ section.banner {
   position: relative;
   z-index: 5;
 }
-/* line 115, ../sass/styles.scss */
+/* line 118, ../sass/styles.scss */
 section.banner .bannerOverlay {
   width: 13em;
   height: 4em;
@@ -172,7 +172,7 @@ section.banner .bannerOverlay {
   background: rgba(0, 0, 0, 0.65);
   line-height: 1.5em;
 }
-/* line 125, ../sass/styles.scss */
+/* line 128, ../sass/styles.scss */
 section.banner .bannerOverlay div:first-of-type {
   color: #fff;
   font-family: "nexaBoldRegular", arial;
@@ -180,7 +180,7 @@ section.banner .bannerOverlay div:first-of-type {
   font-size: 1.5em;
   -webkit-font-smoothing: antialiased;
 }
-/* line 129, ../sass/styles.scss */
+/* line 132, ../sass/styles.scss */
 section.banner .bannerOverlay .bookingList {
   display: none;
   color: #fff;
@@ -190,19 +190,19 @@ section.banner .bannerOverlay .bookingList {
   font-size: 1em;
   -webkit-font-smoothing: antialiased;
 }
-/* line 135, ../sass/styles.scss */
+/* line 138, ../sass/styles.scss */
 section.banner .bannerOverlay .bookingList li {
   -webkit-transition: text-indent 0.3s ease, color 0.3s ease;
   -moz-transition: text-indent 0.3s ease, color 0.3s ease;
   -o-transition: text-indent 0.3s ease, color 0.3s ease;
   transition: text-indent 0.3s ease, color 0.3s ease;
 }
-/* line 138, ../sass/styles.scss */
+/* line 141, ../sass/styles.scss */
 section.banner .bannerOverlay .bookingList li:hover {
   text-indent: 0.25em;
   color: #bbb;
 }
-/* line 142, ../sass/styles.scss */
+/* line 145, ../sass/styles.scss */
 section.banner .bannerOverlay .bookingList li:before {
   content: ' ';
   height: 1em;
@@ -212,7 +212,7 @@ section.banner .bannerOverlay .bookingList li:before {
   margin-top: 0.4em;
   float: left;
 }
-/* line 151, ../sass/styles.scss */
+/* line 154, ../sass/styles.scss */
 section.banner .bannerOverlay div:nth-of-type(2) {
   color: #fff;
   font-family: "nexaLightRegular", arial;
@@ -222,26 +222,26 @@ section.banner .bannerOverlay div:nth-of-type(2) {
   bottom: 5px;
 }
 
-/* line 160, ../sass/styles.scss */
+/* line 163, ../sass/styles.scss */
 .socialIcons {
   position: relative;
   top: 75%;
   left: 0.3em;
 }
-/* line 165, ../sass/styles.scss */
+/* line 168, ../sass/styles.scss */
 .socialIcons .twitter {
   position: absolute;
   top: 0.5em;
   left: 0.5em;
 }
-/* line 170, ../sass/styles.scss */
+/* line 173, ../sass/styles.scss */
 .socialIcons .facebook {
   position: absolute;
   top: 0.5em;
   left: 3.5em;
 }
 
-/* line 177, ../sass/styles.scss */
+/* line 180, ../sass/styles.scss */
 div.textRotator {
   height: 4em;
   background: #212121;
@@ -253,7 +253,7 @@ div.textRotator {
   z-index: 10;
   line-height: 4em;
 }
-/* line 186, ../sass/styles.scss */
+/* line 189, ../sass/styles.scss */
 div.textRotator p {
   text-align: center;
   color: #fff;
@@ -266,15 +266,26 @@ div.textRotator p {
   margin-left: -5em;
   overflow: hidden;
 }
-/* line 195, ../sass/styles.scss */
+/* line 198, ../sass/styles.scss */
+div.textRotator h2 {
+  text-align: center;
+  color: #fff;
+  font-family: "nexaBoldRegular", arial;
+  font-weight: 100;
+  font-size: 2em;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 2px;
+  text-shadow: 1px 2px 0px #646464;
+  overflow: hidden;
+}
+/* line 206, ../sass/styles.scss */
 div.textRotator span {
   position: absolute;
 }
 
-/* line 200, ../sass/styles.scss */
+/* line 211, ../sass/styles.scss */
 section.mainContent {
   width: 80%;
-  height: 20em;
   background: url("../img/main-texture.jpg") repeat;
   position: relative;
   margin: 0 auto;
@@ -282,10 +293,48 @@ section.mainContent {
   -webkit-box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.3);
   box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.3);
+  padding-top: 2em;
+}
+
+/* line 220, ../sass/styles.scss */
+.colRight, .colLeft {
+  font-family: "plantinLight", times new roman;
+  font-weight: 100;
+  font-size: 0.9em;
+  line-height: 1.3em;
+  padding: 1em;
+  display: block;
+}
+
+/* line 228, ../sass/styles.scss */
+.liveDates {
+  height: 15em;
+}
+
+/* line 231, ../sass/styles.scss */
+section.liveDates {
+  background: url("../img/live-dates-bg.jpg") 50% 0% no-repeat;
+}
+
+/* -- FOOTER -- */
+/* line 237, ../sass/styles.scss */
+footer {
+  height: 10em;
+  background: url("../img/footer-bg.jpg") repeat;
+}
+/* line 241, ../sass/styles.scss */
+footer h2 {
+  text-align: center;
+  color: #fff;
+  font-family: "wisdomScriptAiRegular", arial;
+  font-weight: 100;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  line-height: 2em;
 }
 
 /* -- TEXT ROTATOR CSS -- */
-/* line 213, ../sass/styles.scss */
+/* line 252, ../sass/styles.scss */
 .current {
   opacity: 1.0;
   z-index: 30;
@@ -294,13 +343,13 @@ section.mainContent {
   border-right: 50px #212121 solid;
 }
 
-/* line 220, ../sass/styles.scss */
+/* line 259, ../sass/styles.scss */
 .next {
   z-index: 25;
   text-indent: 0.3em;
 }
 
-/* line 224, ../sass/styles.scss */
+/* line 263, ../sass/styles.scss */
 .hidden {
   opacity: 0.0;
   z-index: 20;
@@ -308,12 +357,12 @@ section.mainContent {
 }
 
 /* -- HELPERS -- */
-/* line 232, ../sass/styles.scss */
+/* line 271, ../sass/styles.scss */
 img.a {
   z-index: 10;
 }
 
-/* line 235, ../sass/styles.scss */
+/* line 274, ../sass/styles.scss */
 img.b {
   z-index: 5;
 }
