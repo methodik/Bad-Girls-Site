@@ -1,9 +1,54 @@
 
 $(function() {
 
+	// CHECK FOR MOBILE
+
+	var mobileCheck = $('.mobile');
+		isMobile = true;
+		if(mobileCheck.css('display') === 'block') {
+			isMobile = false;
+		}
+	
+	// MOBILE BOOKING MENU
+
+
+
+	setInterval(function() {
+		bannerSlide();
+		rotateText();
+	}, 6000);
+
+	// BANNER IMG ROTATOR
+
+	function bannerSlide() {
+	
+		var currentSL = $('.currentSL');
+			nextSL = $('.nextSL');
+			hiddenSL = $('.hiddenSL');
+
+		if(!isMobile) {
+			currentSL.transition({backgroundPosition: 550 }, 500, 'easeInSine', function() {
+			currentSL.css({backgroundPosition: 0}).removeClass('currentSL').addClass('hiddenSL');
+			nextSL.addClass('currentSL').removeClass('nextSL');
+			hiddenSL.removeClass('hiddenSL').addClass('nextSL');
+		});	
+		}
+		else {
+			currentSL.transition({backgroundPosition: 1550 }, 500, 'easeInSine', function() {
+			currentSL.css({backgroundPosition: 0}).removeClass('currentSL').addClass('hiddenSL');
+			nextSL.addClass('currentSL').removeClass('nextSL');
+			hiddenSL.removeClass('hiddenSL').addClass('nextSL');
+			});	
+		}
+
+		
+	}
+
 	// FITVID.JS INIT
 
-	$('.mainContent').fitVids();
+	$('.videoContainer').fitVids();	
+	
+	
 
 	// IMG ROLLOVERS
 
@@ -56,14 +101,17 @@ $(function() {
 			})
 	});
 
-	// TEXT ROTATOR 
+	bookButton.click(function() {
+		if((isMobile) && (bannerOverlay.height > 300)) {
+			console.log('its already been clicked');
+		}
+	})
+
+	// TEXT ROTATOR
 
 	var elRot = $('.textRotator').find('span');
 
-	setInterval(function() {
-	
-	console.log('set interval is working');
-
+	function rotateText() {
 		var current = $('.current');
 			next = $('.next');
 			hidden = $('.hidden');
@@ -73,9 +121,29 @@ $(function() {
 			hidden.removeClass('hidden').addClass('next');
 			current.removeClass('current').addClass('hidden');
 		});
+	}
 
-	}, 6000);
+	// MEDIA PAGE IMG ROLLOVER HANDLING
 
+	var galleryIMG = $('div.photoGallery img');
+	var gallery = $('.photoGallery');
 
-	
+	galleryIMG.hover(
+		function() {
+			
+			var $this = $(this);
+
+			$(this).removeClass('photoGalleryImg');
+			$('.photoGalleryImg').stop().animate({opacity: '0.5'}, 200);
+
+		},
+		function() {
+			$('.photoGalleryImg').stop().animate({opacity: '1'}, 200);
+			$(this).addClass('photoGalleryImg');
+		})
+
+	// fancybox
+
+	$(".fancybox").fancybox();
+
 });

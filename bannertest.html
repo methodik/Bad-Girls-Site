@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="stylesheets/styles.css" rel="stylesheet" type="text/css"/>
+	<link href="stylesheets/fonts.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="stylesheets/quoterotator.css" type="text/css"/>
+	<link rel="stylesheet" href="stylesheets/slider.css" type="text/css"/>
+	<title>BAD GIRLS GROOVE | Funk and Blues Band London</title>
+</head>
+<body>
+<div class="pageWrapper">
+	
+
+	<section class="bannerTest">
+		<div class="currentSL one"></div>
+		<div class="nextSL two"></div>
+		<div class="hiddenSL three"></div>
+
+	</section>
+
+	
+</div>
+<script src="js/jquery-1.9.1.js"> </script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.fitvids.min.js"> </script>
+<script src="js/jquery.easing.min.js"> </script>
+<script src="js/main.js"> </script>
+<script src="js/jquery.quote.rotator.js"> </script>
+<script src="js/jquery.transit.min.js"></script>
+<script>
+
+	
+
+	setInterval(bannerSlide, 6000);
+
+	function bannerSlide() {
+
+		var currentSL = $('.currentSL');
+			nextSL = $('.nextSL');
+			hiddenSL = $('.hiddenSL');
+
+		currentSL.transition({x: 550 }, 500, 'easeInSine', function() {
+			currentSL.css({x: 0}).removeClass('currentSL').addClass('hiddenSL');
+			nextSL.addClass('currentSL').removeClass('nextSL');
+			hiddenSL.removeClass('hiddenSL').addClass('nextSL');
+		});
+	}
+
+
+</script>
+
+</body>
+</html>

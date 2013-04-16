@@ -1,0 +1,58 @@
+@import 'compass/reset';
+@import 'compass/css3';
+
+* {
+	font-size: 62.5%;
+}
+
+section.bannerTest {
+	margin-top: 4em;
+	height: 14em;
+	background: #000;
+	width: 700px;
+	position: absolute;
+	left: 50%;
+	margin-left: -350px;
+	z-index: 5;
+	overflow: hidden;
+	
+	.one, .two, .three {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		margin-left: -350px;
+	}
+
+	.one {
+		background: url('../img/banner-alice-mobile.jpg') 50% 50% no-repeat;
+		width: 100%;
+		height:14em;
+		z-index: 200;
+	}
+
+	.two {
+		background: url('../img/banner-jason-mobile.jpg') 50% 50% no-repeat;
+		width: 100%;
+		height: 14em;
+		
+	}
+
+	.three {
+		background: url('../img/mobile-banner-girls.jpg') 50% 50% no-repeat;
+		width: 100%;
+		height: 14em;
+
+	}
+
+	.currentSL {
+		z-index: 20;
+	}
+
+	.nextSL {
+		z-index: 15;
+	}
+
+	.hiddenSL {
+		z-index: 10;
+	}
+}

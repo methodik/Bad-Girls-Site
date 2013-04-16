@@ -1,10 +1,32 @@
+
 @import 'compass/reset';
 @import 'compass/css3';
+@import 'compass/css3/transform';
 
 /* -- VARIABLES & MIXINS --*/ 
 
 $black: #212121;
 $red: #c34f4f;
+
+$mobile: 320px;
+$desktop: 800px;
+
+$mediaSmall: 'only screen
+	and (min-device-width: 300px)
+	and (max-device-width: 760px)';
+
+$mediaMedium: 'only screen
+	and (min-device-width: 761px)
+	and (max-device-width: 800px)';
+
+$mediaDesktop: 'only screen
+	and (min-width: 800px)
+	and (max-width: 2000px)';
+
+@mixin border($color) {
+	border: medium $color solid;
+}
+
 
 @mixin mensch($size) {
 	font-family: 'menschRegular', arial;
@@ -42,12 +64,43 @@ $red: #c34f4f;
 
 
 /* -- GENERAL STYLES -- */ 
-* {
+*, html, body {
 	@include box-sizing(border-box);
-	font-size: 62.5%;
+	font-size: 100%;
+
+	@media #{$mediaSmall} {
+		font-size: 0.9em;
+	}
+
+	@media #{$mediaMedium} {
+		font-size: 1.1em;
+	}
 }
 body {
 	background: url('../img/subtle_dots.png') repeat;
+}
+h2 {
+	text-align: center;
+	color: #fff;
+	@include nexaBold(2em);
+	letter-spacing: 2px;
+	@include text-shadow(1px 2px 0px #646464);
+	overflow: hidden;
+}
+h3 {
+	@include wisdomScript(1.5em);
+	color: $black;
+}
+p {
+	@include plantinLight(1em);
+	color: #282727;
+	@media #{$mediaSmall} {
+		font-size: 1em;
+	}
+	@media #{$mediaDesktop} {
+		font-size: 1em;
+	}
+
 }
 .pageWrapper {
 	width: 100%;
@@ -65,10 +118,67 @@ header {
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 10;
+	z-index: 50;
+
+	@media #{$mediaDesktop} {
+		position: absolute;
+	}
 }
+.logo {
+	
+	display: none;
+	@media #{$mediaSmall} {
+		display: none;
+	}
+	@media #{$mediaMedium} {
+		display: none;
+	}
+	@media #{$mediaDesktop} {
+		display: block;
+		height: 8.5em;
+		width: 10em;
+		position: absolute;
+		z-index: 80;
+		left: 10%;
+		background: url('../img/footer-bg.jpg') repeat;
+		box-shadow: inset 0px 0px 30px black;	
+	}
+	
+
+	img {
+		height: 100px;
+		width: 100px;
+		margin-left: 29px;
+		margin-top: 5px;
+		
+		}
+
+	h3 {
+		color: white;
+		font-size: 1em;
+		text-align: center;
+	}
+
+	:before {
+		content: ' ';
+		z-index: 70;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 8.5em;
+		width: 10em;
+		box-shadow: 0px 0px 7px 7px black;
+	}
+}
+
 nav.main {
 	height: 4em;
+	@media #{$mediaDesktop} {
+		width: 40%;
+		float: right;
+		margin-right: 10%;
+
+	}
 
 	ul {
 		height: 4em;
@@ -87,20 +197,31 @@ nav.main {
 		font-smooth: never;
 		position: relative;
 		line-height: 2.75em;
+		padding-left: 2em;
+
+		@media #{$mediaDesktop} {
+			font-size: 1.25em;
+			line-height: 3em;
+		}
 	}
 }
-
 .navLineTop {
-	width: 1px;
+	width: 2px;
+	margin-left: 1px;
 	height: 0em;
 	background: #fff;
 	position: absolute;
 	top: 0;
 	left: 50%;
 	z-index: 15;
+
+	@media #{$mediaDesktop} {
+		margin-left: 2em;
+	}
 }
 .navLineBottom {
-	width: 1px;
+	width: 2px;
+	margin-left: 1px;
 	height: 0em;
 	background: #fff;
 	position: absolute;
@@ -108,23 +229,53 @@ nav.main {
 	left: 50%;
 	z-index: 15;
 }
-section.banner {
-	margin-top: 4em;
+.bannerContainer {
+	width: 100%;
 	height: 14em;
-	background: url('../img/mobile-banner.jpg') 50% 50% no-repeat;
+	margin-top: 4em;
+
+	@media #{$mediaMedium} {
+		height: 12em;
+		margin-top: 3.8em;
+	}
+}
+section.banner {
+	/*margin-top: 4em;
+	height: 14em;
 	position: relative;
-	z-index: 5;
+	z-index: 5; */
+
+	height: 14em;
+	background: #000;
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+	z-index: 25;
+	overflow: hidden;
+
+	@media #{$mediaDesktop} {
+		height: 25em;
+		z-index: 0;
+	}
 
 	.bannerOverlay {
 		width: 13em;
 		height: 4em;
 		position: absolute;
 		padding: 0.75em;
-		bottom: 33%;
+		bottom: 30%;
 		left: 0;
 		background: #000; /* the fallback */
 		background: rgba(00, 00, 00, 0.65);
 		line-height: 1.5em;
+		z-index: 45;
+
+		@media #{$mediaDesktop} {
+			padding: .75em .75em .75em 0em;
+			margin-left: 10%;
+		}
+
+
 	div:first-of-type {
 		color: #fff;
 		@include nexaBold(1.5em);
@@ -137,6 +288,12 @@ section.banner {
 	}
 	.bookingList li {
 		@include transition(text-indent 0.3s ease, color 0.3s ease);
+
+		@media #{$mediaSmall} {
+			font-size: 0.75em;
+			padding: 0em;
+			line-height: 1.3em;
+		}
 	}
 	.bookingList li:hover {
 		text-indent: 0.25em;
@@ -150,6 +307,10 @@ section.banner {
 		position: relative;
 		margin-top: 0.4em;
 		float: left;
+
+		@media #{$mediaSmall} {
+			display: none;
+		}
 	}
 	div:nth-of-type(2) {
 		color: #fff;
@@ -160,20 +321,101 @@ section.banner {
 	}
 
 }
+
+
+.one, .two, .three {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -350px;
+
+	@media #{$mediaDesktop} {
+		margin-left: -700px;
+	}
+}
+
+.one {
+	background: url('../img/banner-alice-mobile.jpg') 50% 50% no-repeat;
+	width: 700px;
+	height:14em;
+	z-index: 200;
+
+	@media #{$mediaDesktop} {
+		background: url('../img/banner-alice-desktop.jpg') 50% 50% no-repeat;
+		width: 1400px;
+		height: 25em;
+	}
+
+}
+
+.two {
+	background: url('../img/banner-jason-mobile.jpg') 50% 50% no-repeat;
+	width: 700px;
+	height: 14em;
+
+	@media #{$mediaDesktop} {
+		background: url('../img/banner-jason-desktop.jpg') 50% 50% no-repeat;
+		width: 1400px;
+		height: 25em;
+	}
+	
+}
+
+.three {
+	background: url('../img/mobile-banner-girls.jpg') 50% 50% no-repeat;
+	width: 700px;
+	height: 14em;
+
+	@media #{$mediaDesktop} {
+		background: url('../img/bad-girls-groove-band-desktop.jpg') 50% 50% no-repeat;
+		width: 1400px;
+		height: 25em;
+	}
+
+}
+
+.currentSL {
+	z-index: 20;
+}
+
+.nextSL {
+	z-index: 15;
+}
+
+.hiddenSL {
+	z-index: 10;
+}
+
 .socialIcons {
 	position: relative;
-	top: 75%;
+	top: 80%;
 	left: 0.3em;
+	height: 2.5em;
+	width: 8em;
+	z-index: 70;
+
+	@media #{$mediaDesktop} {
+		left: 10%;
+		margin-left: 0;
+	}
 
 	.twitter {
 		position: absolute;
 		top: 0.5em;
 		left: 0.5em;	
+
+		@media #{$mediaDesktop} {
+			left: 0;
+		}
 	}
 	.facebook {
 		position: absolute;
 		top: 0.5em;
 		left: 3.5em;
+
+		@media #{$mediaDesktop} {
+			left: 3em;
+		}
 	}
 }
 
@@ -183,17 +425,29 @@ div.textRotator {
 	@include box-shadow( 0px 0px 2px 2px rgba(00, 00, 00, 0.4));
 	position: relative;
 	width: 100%;
-	z-index: 10;
+	max-width: 1050px;
 	line-height: 4em;
+	
+	@media #{$mediaDesktop} {
+		width: 85%;
+		height: 5.5em;
+		margin: 9em auto 0;
+		min-width: 850px;
+	}
 
 	p {
 		text-align: center;
 		color: #fff;
 		@include nexaBold(2em);
+		line-height: 2em;
 		letter-spacing: 2px;
 		@include text-shadow(1px 2px 0px #646464);
 		margin-left: -5em;
 		overflow: hidden;
+
+		@media #{$mediaDesktop} {
+			font-size: 3em;
+		}
 	}
 	h2 {
 		text-align: center;
@@ -205,8 +459,45 @@ div.textRotator {
 	}
 	span {
 		position: absolute;
+		
+		@media #{$mediaDesktop} {
+			height: 1em;	
+		}
 	}
 }
+
+div.textRotator:before {
+
+	@media #{$mediaDesktop} {
+		content: ' ';
+		position: absolute;
+		top: -0.1em;
+		left: 0em;
+		height: 90px;
+		width: 140px;
+		background: lighten($red, 5%);
+		//@include background-image(linear-gradient($red, lighten($black, 20%)));
+		z-index: -11;
+		@include rotate(-66deg);
+	}
+}
+
+div.textRotator:after {
+
+	@media #{$mediaDesktop} {
+		content: ' ';
+		position: absolute;
+		top: -0.1em;
+		right: 0em;
+		height: 90px;
+		width: 140px;
+		background: lighten($red, 5%);
+		//@include background-image(linear-gradient($red, lighten($black, 20%)));
+		z-index: -11; 
+		@include rotate(66deg);
+	}
+}
+
 
 section.mainContent {
 	width: 80%;
@@ -216,15 +507,142 @@ section.mainContent {
 	z-index: 5;
 	@include box-shadow(0 2px 8px 4px rgba(00, 00, 00, 0.3));
 	padding-top: 2em;
+	padding-bottom: 2em;
+
+	@media #{$mediaDesktop} {
+		z-index: -10;
+		max-width: 950px;
+		min-width: 800px;
+		padding-bottom: 5em;
+		@include box-shadow(0 2px 8px 4px rgba(00, 00, 00, 0.0));
+	}
 }
+.backgroundTexture {
+	background: url('../img/main-texture.jpg') repeat;
+	z-index: 80;
+	padding: 2em 0 2em;
+	margin-top: -2em;
+	margin-bottom: -2em;
+	position: relative;
+}
+
+.videoContainer {
+	width: 100%;
+	
+	@media #{$mediaDesktop} {
+		width: 55%;
+	}
+}
+
+@media #{$mediaDesktop} {
+	.mainContent:after {
+		content: ' ';
+		height: 7em;
+		width: 100%;
+		position: absolute;
+		bottom: -1em;
+		background: url('../img/subtle_dots.png') repeat;
+		@include box-shadow(inset 0 60px 70px rgba(255, 253, 254, 0.8))
+	}
+	.mainContent:before {
+	    content:" ";
+	    position: absolute;
+	    z-index: 0;
+	    left: -5px; right: -5px;
+	    top: 0px;
+	    bottom: -6px;
+	    border-radius: 0px;
+	    @include background-image(linear-gradient(rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%));
+	    @include box-shadow(inset 0 0px 2px 2px rgba(255, 255, 255, 0.7));
+	}
+	.videoContainer:before {
+		content: ' ';
+		position: absolute;
+		top: -4px;
+		left: -10px;
+		height: 30px;
+		width: 5px;
+		@include box-shadow(4px -15px 5px rgba(0, 0, 0, 0.6));
+	}
+	.videoContainer:after {
+		content: ' ';
+		position: absolute;
+		top: -4px;
+		right: -1px;
+		height: 30px;
+		width: 8px;
+		z-index: 30;
+		@include box-shadow(4px -15px 8px rgba(0, 0, 0, 1));
+	}
+}
+
+@media only screen
+and (min-width: 1244px) {
+	.videoContainer:before {
+		top:0px;
+		@include box-shadow(4px -5px 8px rgba(0, 0, 0, 0.8));
+	}
+	.videoContainer:after {
+		top: 0px;
+		@include box-shadow(4px -7px 8px rgba(0, 0, 0, 0.8));
+	}
+	.backgroundTexture {
+		top: -6px;
+	}
+}
+
 .colRight {
 	@include plantinLight(0.9em);
 	padding: 1em;
-	display: block;
+	display: block;	
+
+	@media #{$mediaDesktop} {
+		position: absolute;
+		top: 2em;
+		padding-top: 0em;
+		right: 0;
+		width: 43%;
+	
+	}
 }
 .colLeft {
-	@extend .colRight;
+	@include plantinLight(0.9em);
+	padding: 1em;
+	display: block;
+	
+	@media #{$mediaDesktop} {
+		width: 43%;
+		margin-top: 2.2em;
+		padding: 1em;
+	}
+}	
+
+
+.live {
+
+	height: 4em;
+	background: $black;
+	@include box-shadow( 0px 0px 2px 2px rgba(00, 00, 00, 0.4));
+	position: relative;
+	width: 100%;
+	max-width: 1050px;
+	line-height: 4em;
+
+	@media #{$mediaDesktop} {
+		height: 5.5em;
+		background: $black;
+		@include box-shadow( 0px 1px 2px 2px rgba(00, 00, 00, 0.2));
+		position: relative;
+		width: 36em;
+		margin: 0 auto;
+		line-height: 5.5em;
+
+		h2 {
+			font-size: 3em;
+		}	
+	}
 }
+
 .liveDates {
 	height: 15em;
 }
@@ -235,22 +653,161 @@ section.liveDates {
 /* -- FOOTER -- */
 
 footer {
-	height: 10em;
 	background: url('../img/footer-bg.jpg') repeat;
+	height: 30em;
+	padding: 0 10% 0 10%;
 
-	h2 {
+	@media #{$mediaDesktop} {
+		position: relative;
+		height: 23em;
+	}
+
+	@media #{$mediaSmall} {
+		height: 30em;
+	}
+
+	h3 {
 		text-align: center;
 		color: #fff;
 		@include wisdomScript(1em);
 		line-height: 2em;
+
+		@media #{$mediaDesktop} {
+			font-size: 1.3em;
+		}
 	}
 }
+.contactDetails {
+	height: 5em;
+	width: 50%;
+	
+	@media #{$mediaDesktop} {
+		position: absolute;
+		right: 10%;
+		top: 50%;
+
+		ul {
+			margin-top: 2em;
+		}				
+	}
+
+	ul li {
+		color: $red;
+		@include nexaLight(1em);
+		margin-top: 0.5em;
+
+		@media #{$mediaDesktop} {
+			font-size: 1.25em;
+			margin-top: .75em;
+			text-align: right;
+			content:'yo';
+		}
+	}
+
+	a {
+		border-bottom: 1px rgba(255, 255, 255, 0.7) solid;
+	}
+}
+nav.secondaryNav {
+	width: 50%;
+	float: right;
+
+	@media #{$mediaDesktop} {
+		margin-top: 2em;
+	}
+
+	li {
+		color: #fff;
+		@include mensch(1em);
+		text-align: right;
+		transition: color 0.3s ease;
+		margin-top: 0.5em;
+
+		@media #{$mediaDesktop} {
+			font-size: 1.25em;
+		}
+	}
+	li:hover {
+		color: $red;
+	}
+}
+.contactForm {
+	font-size: 0.7em;
+	width: 100%;
+	position: relative;
+	margin: 11em auto;
+	height: 15em;
+
+	@media #{$mediaDesktop} {
+		margin: 2em auto;
+		width: 50%;
+		float: left;
+	}
+
+	input, textarea {
+		@media #{$mediaSmall} {
+			-webkit-appearance: none;
+			@include border-radius(0px);
+		}
+
+		@media #{$mediaMedium} {
+			-webkit-appearance: none;
+			@include border-radius(0px);
+		}
+	}
+
+	input[type = text] {
+		width: 100%;
+		display: block;
+		margin: 1em 0;
+		outline: none;
+		background: transparent;
+		border: thin white solid;
+		height: 2.5em;
+		padding: 1em;
+		color: #fff;
+	}
+
+	textarea {
+		width: 100%;
+		outline: none;
+		background: transparent;
+		border: thin white solid;
+		height: 12em;
+		padding: 1em;
+		color: #fff;
+		line-height: 1.5em;
+	}
+
+	input[type = submit] {
+		margin: 1em auto;
+		display: block;
+		outline: none;
+		background: #fff;
+		border: none;
+		height: 2.5em;
+		width: 8em;
+		@include transition(color 0.3s ease, background 0.3s ease);
+
+		@media #{$mediaDesktop} {
+			height: 3em;
+			width: 10em;
+		}
+	}
+
+	input[type = submit]:hover {
+		background: $red;
+		color: #fff;
+	}
+
+}
+
 
 
 /* -- TEXT ROTATOR CSS -- */
 
 .current {
-	opacity: 1.0;
+	opacity: 1;
 	z-index: 30;
 	background: $black;
 	text-indent: 0.3em;
@@ -259,9 +816,10 @@ footer {
 .next {
 	z-index: 25;
 	text-indent: 0.3em;
+	opacity: 0;
 }
 .hidden {
-	opacity: 0.0;
+	opacity: 0;
 	z-index: 20;
 	text-indent: 0.3em;
 }
@@ -273,5 +831,22 @@ img.a {
 }
 img.b {
 	z-index: 5;
+}
+.mobile {
+	display: block;
+	color: red;
+
+	@media #{$mediaSmall} {
+		display: none;
+	}
+	
+	@media #{$mediaMedium} {
+		display: none;
+	}
+
+	@media only screen
+		and (min-width: 700px) {
+			display: none;
+		}
 }
 

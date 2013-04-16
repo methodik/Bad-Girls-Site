@@ -1092,3 +1092,102 @@ img.b {
     display: none;
   }
 }
+
+/* line 4, ../sass/subpage.scss */
+section.subPageContent {
+  padding: 5em 1em;
+}
+/* line 7, ../sass/subpage.scss */
+section.subPageContent h2 {
+  color: #000;
+  text-shadow: 1px 2px 0px #dd9b9b;
+  padding: 1em;
+}
+
+/* line 15, ../sass/subpage.scss */
+.aboutMember {
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px #a1a1a1 dotted;
+}
+/* line 20, ../sass/subpage.scss */
+.aboutMember a, .aboutMember img {
+  width: 60%;
+  max-width: 16em;
+  height: auto;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  -webkit-transition: -webkit-transform 0.15s ease, border 0.15s ease;
+  -moz-transition: -moz-transform 0.15s ease, border 0.15s ease;
+  -o-transition: -o-transform 0.15s ease, border 0.15s ease;
+  transition: transform 0.15s ease, border 0.15s ease;
+}
+/* line 29, ../sass/subpage.scss */
+.aboutMember img:hover {
+  -webkit-transform: scale(1.2, 1.2);
+  -moz-transform: scale(1.2, 1.2);
+  -ms-transform: scale(1.2, 1.2);
+  -o-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+  border: 2px #c34f4f solid;
+  border-radius: 50%;
+  padding: 2px;
+}
+/* line 36, ../sass/subpage.scss */
+.aboutMember h3 {
+  text-align: center;
+  line-height: 2em;
+}
+/* line 41, ../sass/subpage.scss */
+.aboutMember p {
+  font-size: 0.75em;
+  margin-top: 1em;
+}
+
+/* line 49, ../sass/subpage.scss */
+.photoGallery {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+/* line 54, ../sass/subpage.scss */
+.photoGallery a {
+  width: 33.33%;
+  float: left;
+  display: inline-block;
+  position: relative;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 0.5em transparent solid;
+  margin-left: -0.5em;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  -moz-transition: -moz-transform 0.2s ease;
+  -o-transition: -o-transform 0.2s ease;
+  transition: transform 0.2s ease;
+}
+/* line 66, ../sass/subpage.scss */
+.photoGallery a img {
+  width: 100%;
+}
+/* line 70, ../sass/subpage.scss */
+.photoGallery a:nth-of-type(3n-1) {
+  margin-left: 0.5em;
+}
+/* line 73, ../sass/subpage.scss */
+.photoGallery a:nth-of-type(3n) {
+  float: right;
+  margin-right: -0.5em;
+}
+/* line 77, ../sass/subpage.scss */
+.photoGallery a:hover {
+  -webkit-transform: scale(1.1, 1.1);
+  -moz-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  -o-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+  z-index: 200;
+}

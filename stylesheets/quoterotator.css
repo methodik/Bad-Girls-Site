@@ -1,6 +1,21 @@
 
 /* -- QUOTE ROTATOR -- */
 
+@media only screen
+and (min-width: 800px)
+and (max-width: 2000px) {
+
+	.bottomQuoteContainer {
+		position: relative;
+		margin-top: 2em;
+		width: 55%;
+		float: right;
+		overflow: visible;
+	}
+}
+
+
+
 .quoteRotator-container {
 	width: 80%;
 	max-width: 35em;
